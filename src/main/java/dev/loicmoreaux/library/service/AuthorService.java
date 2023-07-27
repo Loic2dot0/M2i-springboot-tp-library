@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import dev.loicmoreaux.library.dao.AuthorRepository;
 import dev.loicmoreaux.library.entity.Author;
+import dev.loicmoreaux.library.entity.Book;
 
 @Service
 public class AuthorService {
@@ -29,5 +30,9 @@ public class AuthorService {
 	
 	public void deleteAuthor(Integer id) {
 		authorRepository.deleteById(id);
+	}
+	
+	public Author updateAuthor(Author author) {
+		return authorRepository.save(author);
 	}
 }

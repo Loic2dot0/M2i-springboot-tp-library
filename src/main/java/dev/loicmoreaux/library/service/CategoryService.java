@@ -30,5 +30,9 @@ public class CategoryService {
 	public void deleteCategory(Integer id) {
 		categoryRepository.deleteById(id);
 	}
+	
+	public Category updateCategory(Category category) {
+		return categoryRepository.save(category);		
+	} 
 
 }
