@@ -12,7 +12,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name= "books")
+@Table(name = "books")
 public class Book {
 	
 	@Id
@@ -40,7 +40,7 @@ public class Book {
 	}
 	
 	/**
-	 * Getteres and Setters
+	 * Getters and Setters
 	 */
 	public Integer getId() {
 		return id;
