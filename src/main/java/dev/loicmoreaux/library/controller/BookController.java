@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -52,6 +53,19 @@ public class BookController {
 		Optional<Book> optionalBook = bookService.getBookById(id);
 		
 		if(optionalBook.isPresent()) return ResponseEntity.ok(bookService.updateBook(modifiedBook));
+		
+		return ResponseEntity.notFound().build();
+	}
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity<?> deleteBook(@PathVariable("id") Integer id){
+		Optional<Book> optionalBook = bookService.getBookById(id);
+		
+		
+		if(optionalBook.isPresent()) {
+			bookService.deleteBook(id);
+			return ResponseEntity.ok().build();
+		}
 		
 		return ResponseEntity.notFound().build();
 	}

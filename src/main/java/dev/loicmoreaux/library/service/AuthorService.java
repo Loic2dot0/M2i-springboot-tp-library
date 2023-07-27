@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import dev.loicmoreaux.library.dao.AuthorRepository;
 import dev.loicmoreaux.library.entity.Author;
-import dev.loicmoreaux.library.entity.Book;
 
 @Service
 public class AuthorService {
